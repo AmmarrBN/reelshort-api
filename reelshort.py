@@ -18,7 +18,6 @@ api = Api(
 
 ns = api.namespace('reelshort', description='Operasi ReelShort')
 
-# Model sederhana - hanya field penting
 search_result_model = api.model('SearchResult', {
     'book_id': fields.String(description='ID unik buku/drama (simpan untuk step 2)', required=True),
     'book_title': fields.String(description='Judul drama'),
