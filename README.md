@@ -90,7 +90,7 @@ GET /api/v1/reelshort/video/{book_id}/{episode_num}?filtered_title=love-story-dr
 **Response:**
 ```json
 {
-  "video_url": "https://cdn.reelshort.com/video.mp4",
+  "video_url": "https://cdn.reelshort.com/video.m3u8",
   "episode": 1,
   "duration": 120,
   "next_episode": {
@@ -99,6 +99,7 @@ GET /api/v1/reelshort/video/{book_id}/{episode_num}?filtered_title=love-story-dr
   }
 }
 ```
+Convert Dulu dari .m3u8 jadi .mp4
 
 ## Endpoints
 
