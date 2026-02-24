@@ -261,33 +261,12 @@ class VideoResource(Resource):
         }
 
 
-# Handler untuk Vercel Serverless
-def handler(request, **kwargs):
-    """Handler function untuk Vercel Serverless"""
-    with app.test_client() as client:
-        # Build URL dengan query string
-        url = request.path
-        if request.query_string:
-            url = f"{url}?{request.query_string.decode('utf-8')}"
-        
-        # Pilih method
-        method = request.method
-        headers = dict(request.headers)
-        data = request.get_data() if request.data else None
-        
-        response = client.open(
-            url,
-            method=method,
-            headers=headers,
-            data=data
-        )
-        
-        return {
-            'statusCode': response.status_code,
-            'headers': dict(response.headers),
-            'body': response.get_data(as_text=True)
-        }
+# ============================================
+# VERCEL WSGI ENTRY POINT - JANGAN DIHAPUS
+# ============================================
 
+# Vercel akan otomatis mendeteksi 'app' sebagai WSGI application
+# Tidak perlu handler function custom
 
 # Untuk development lokal
 if __name__ == '__main__':
