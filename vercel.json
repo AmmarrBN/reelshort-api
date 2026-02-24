@@ -1,15 +1,15 @@
 {
-  "buildCommand": "pip install -r requirements.txt && flask run",
+  "version": 2,
   "builds": [
     {
-      "src": "index.py",
+      "src": "reelshort.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "index.py"
+      "dest": "reelshort.py"
     }
   ]
 }
