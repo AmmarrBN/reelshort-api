@@ -4,7 +4,7 @@ import requests
 import re
 import json
 import logging
- 
+
 # Setup logging
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -554,4 +554,7 @@ class RecommendResource(Resource):
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    # Gunakan PORT dari environment variable (Heroku) atau default 5000
+    port = int(os.environ.get('PORT', 5000))
+    # Debug=False untuk production
+    app.run(host='0.0.0.0', port=port, debug=False)
